@@ -196,7 +196,6 @@ let answers = [];
 
 function startTraining() {
   currentQ = 0; score = 0; answers = [];
-  // embaralha as perguntas a cada rodada
   QUESTIONS.sort(() => Math.random() - 0.5);
   showScreen('screenQuestion');
   document.getElementById('progressWrap').style.display = 'block';
