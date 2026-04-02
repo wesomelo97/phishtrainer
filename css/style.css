@@ -481,3 +481,17 @@ header {
   .review-q { font-size: 13px; }
   .review-explanation { font-size: 12px; }
 }
+
+footer {
+  width: 100%;
+  max-width: 860px;
+  text-align: center;
+  padding: 32px 0 0;
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--dim);
+  position: relative;
+  z-index: 1;
+}
+
+footer span { color: var(--accent); }
