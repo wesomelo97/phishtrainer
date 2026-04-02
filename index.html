@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhishTrainer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-block">
+    <h1>PHISH<span>TRAINER</span></h1>
+    <p>// SECURITY AWARENESS TRAINING //</p>
+  </div>
+  <div class="progress-wrap" id="progressWrap" style="display:none">
+    <div class="progress-label" id="progressLabel">1 / 10</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+  </div>
+</header>
+
+<div class="main">
+
+  <!-- INTRO -->
+  <div class="screen active" id="screenIntro">
+    <p class="big-title">Você saberia<br>identificar um<br><span>ataque real?</span></p>
+    <p class="intro-desc">10 cenários baseados em técnicas reais de phishing. Quiz de identificação e simulações de decisão. Descubra onde está sua exposição.</p>
+
+    <div class="intro-grid">
+      <div class="intro-card">
+        <div class="ic-num">07</div>
+        <p>Cenários de e-mails falsos para identificar indicadores reais de phishing</p>
+      </div>
+      <div class="intro-card">
+        <div class="ic-num">03</div>
+        <p>Simulações de decisão onde você escolhe como agir em situações reais</p>
+      </div>
+      <div class="intro-card">
+        <div class="ic-num">10</div>
+        <p>Questões no total com feedback detalhado explicando cada resposta</p>
+      </div>
+      <div class="intro-card">
+        <div class="ic-num">~5</div>
+        <p>Minutos para completar o treinamento e receber seu score de consciência</p>
+      </div>
+    </div>
+
+    <button class="btn" onclick="startTraining()">INICIAR TREINAMENTO</button>
+  </div>
+
+  <!-- QUESTION -->
+  <div class="screen" id="screenQuestion">
+    <div class="q-meta">
+      <span class="q-tag" id="qTag">QUIZ</span>
+      <span class="q-num" id="qNum">QUESTÃO 1 DE 10</span>
+    </div>
+
+    <div class="q-title" id="qTitle"></div>
+    <div id="qContent"></div>
+    <div class="options" id="qOptions"></div>
+
+    <div class="feedback-box" id="feedbackBox">
+      <div class="fb-title" id="fbTitle"></div>
+      <p id="fbText"></p>
+    </div>
+
+    <div class="next-btn-wrap">
+      <button class="btn" id="nextBtn" onclick="nextQuestion()" style="display:none">
+        PRÓXIMA
+      </button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="screen" id="screenResult">
+    <div class="result-hero">
+      <div class="result-score-row">
+        <div class="result-score-num" id="resultNum">0</div>
+        <div class="result-level-block">
+          <div class="result-level" id="resultLevel">—</div>
+          <div class="result-desc" id="resultDesc"></div>
+        </div>
+      </div>
+      <div class="result-bar-wrap">
+        <div class="result-bar">
+          <div class="result-bar-fill" id="resultBarFill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-title">REVISÃO — O QUE VOCÊ ERROU</div>
+    <div id="reviewList"></div>
+
+    <div class="retry-wrap">
+      <button class="btn" onclick="restartTraining()">TENTAR NOVAMENTE</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
